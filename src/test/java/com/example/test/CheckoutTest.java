@@ -15,10 +15,6 @@ public class CheckoutTest{
     LoginService loginService;
     NavigationService navigationService;
 
-    protected void preconditions() {
-        navigationService = new NavigationService();
-    }
-
     @Test
     public void test() {
 
