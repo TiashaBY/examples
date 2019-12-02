@@ -2,7 +2,6 @@ package com.example.test;
 
 import com.codeborne.selenide.Selenide;
 import com.example.tbulavko.business.page.HomePage;
-import com.example.tbulavko.business.steps.LoginService;
 import com.example.tbulavko.business.steps.NavigationService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,8 +11,14 @@ import org.junit.Test;
  */
 public class CheckoutTest{
 
-    LoginService loginService;
     NavigationService navigationService;
+
+    protected void preconditions() {
+        //should be moved into testdata
+        //customer = new JsonReader().getCustomer("Default");
+        //loginService = new LoginService();
+        navigationService = new NavigationService();
+    }
 
     @Test
     public void test() {
@@ -23,7 +28,6 @@ public class CheckoutTest{
         navigationService.open("https://www.w3schools.com/howto/");
 
         new HomePage().clickCheckoutFormLink();
-       // Selenide.actions().keyDown()*/
 
         //TODO
 
